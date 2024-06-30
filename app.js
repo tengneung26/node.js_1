@@ -1,28 +1,14 @@
 const express = require('express');
-const app = express();
 const PORT = process.env.PORT;
 const path = require('path');
-const products = require("./data/products.json");
-const productRouter = express.Router();
+
+const app = express();
+const productsRouter = require("./src/router/productsRouter")
 
 app.use(express.static(path.join(__dirname, "/public/")))
 
 app.set("views", "./src/views");
 app.set("view engine", "ejs")
-
-productRouter.route("/").get((req, res) => {
-    res.render("products", {
-        products,
-    }
-    );
-});
-
-productRouter.route("/:id").get((req, res) => {
-    const id = req.params.id;
-    res.render("product", {
-        product: products[id],
-    })
-});
 
 app.use("/products", productRouter)
 
