@@ -3,14 +3,14 @@ const PORT = process.env.PORT;
 const path = require('path');
 
 const app = express();
-const productsRouter = require("./src/router/productsRouter")
+const productsRouter = require("./src/router/productsRouter");
 
-app.use(express.static(path.join(__dirname, "/public/")))
+app.use(express.static(path.join(__dirname, "/public/")));
 
 app.set("views", "./src/views");
-app.set("view engine", "ejs")
+app.set("view engine", "ejs");
 
-app.use("/products", productRouter)
+app.use("/products", productsRouter);
 
 app.get("/", (req, res) => {
 
