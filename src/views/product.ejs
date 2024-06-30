@@ -11,17 +11,15 @@
 <section id="features" class="ud-features">
     <div class="container">
         <h1>Product Detail</h1>
-        <% products.map((product)=>{ %>
-            <h4>
-                <a href="/products/<%=product.id%>">
-                    <%=product.Title %>
-                </a>
-            </h4>
-            <p>
-                <%=product.Describtion %>
-            </p>
-            <p>ราคา : <%=product.Price %> บาท</p>
-            <%})%>
+        <h4>
+            <a href="/products/<%=product.id%>">
+                <%=product.Title %>
+            </a>
+        </h4>
+        <p>
+            <%=product.Describtion %>
+        </p>
+        <p>ราคา : <%=product.Price %> บาท</p>
     </div>
 </section>
 
